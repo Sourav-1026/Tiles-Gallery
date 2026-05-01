@@ -2,6 +2,7 @@
 import { authClient } from "@/lib/auth-client";
 import { Check, Target } from "@gravity-ui/icons";
 import { Button, Card, Description, FieldError, Form, Input, Label, TextField } from "@heroui/react";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 
 export default function SignUpPage() {
@@ -33,7 +34,7 @@ export default function SignUpPage() {
 
   return (
     <Card className="border mx-auto w-125 py-10 my-14 bg-[#1D9E75]">
-      <h1 className="text-center text-2xl font-bold">Sign Up</h1>
+      <h1 className="text-center text-2xl font-bold text-white">Sign Up</h1>
 
       <Form className="flex w-96 mx-auto flex-col gap-4" onSubmit={onSubmit}>
         <TextField isRequired name="name" type="text">
@@ -86,18 +87,18 @@ export default function SignUpPage() {
         >
           <Label>Password</Label>
           <Input placeholder="Enter your password" />
-          <Description>Must be at least 8 characters with 1 uppercase and 1 number</Description>
+          <Description className="text-black">Must be at least 8 characters with 1 uppercase and 1 number</Description>
           <FieldError />
         </TextField>
 
         <div className="flex gap-2">
           <Button type="submit">
             <Check />
-            Submit
+            Signup
           </Button>
-          <Button type="reset" variant="secondary">
-            Reset
-          </Button>
+          <Link href={"/login"}>
+            <Button variant="secondary">Login</Button>
+          </Link>
         </div>
       </Form>
     </Card>
