@@ -1,9 +1,22 @@
+"use client";
+
 import Link from "next/link";
 import React from "react";
 import logo from "@/assets/logo.png";
 import Image from "next/image";
+import { authClient } from "@/lib/auth-client";
 
 const Navbar = () => {
+  const userData = authClient.useSession();
+  // console.log(userData);
+  const user = userData.data?.user;
+
+  // console.log(user);
+
+  const handleLogout = async () => {
+    await authClient.signOut();
+  };
+
   const links = (
     <>
       <li>
@@ -12,9 +25,11 @@ const Navbar = () => {
       <li>
         <Link href={"/all-tiles"}>All Tiles</Link>
       </li>
-      <li>
-        <Link href={"/"}>My Profile</Link>
-      </li>
+      {user && (
+        <li>
+          <Link href={"/my-profile"}>My Profile</Link>
+        </li>
+      )}
     </>
   );
 
@@ -41,12 +56,22 @@ const Navbar = () => {
         <ul className="menu menu-horizontal px-1">{links}</ul>
       </div>
       <div className="navbar-end gap-3.5">
-        <Link href={"/login"} className="btn bg-[#1D9E75] text-white">
-          Login
-        </Link>
-        <Link href={"/signup"} className="btn bg-[#1D9E75] text-white">
-          Sign Up
-        </Link>
+        {!user && (
+          <>
+            <Link href="/login" className="btn bg-[#1D9E75] text-white">
+              Login
+            </Link>
+            <Link href="/signup" className="btn bg-[#1D9E75] text-white">
+              Sign Up
+            </Link>
+          </>
+        )}
+
+        {user && (
+          <button onClick={handleLogout} className="btn btn-error text-white">
+            Logout
+          </button>
+        )}
       </div>
     </div>
   );

@@ -21,6 +21,12 @@ export default function LoginPage() {
     console.log({ data, error });
   };
 
+  const handleGoogleSignIN = async () => {
+    await authClient.signIn.social({
+      provider: "google",
+    });
+  };
+
   return (
     <Card className="border mx-auto w-125 py-10 my-33 bg-[#1D9E75]">
       <h1 className="text-center text-2xl font-bold">Login</h1>
@@ -78,6 +84,11 @@ export default function LoginPage() {
           </Button>
         </div>
       </Form>
+
+      <p className="text-center">Or</p>
+      <Button onClick={handleGoogleSignIN} variant="outline" className={"w-full bg-white"}>
+        SignIn with Google
+      </Button>
     </Card>
   );
 }
