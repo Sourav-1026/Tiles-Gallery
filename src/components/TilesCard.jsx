@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 const TilesCard = ({ t }) => {
@@ -11,7 +12,9 @@ const TilesCard = ({ t }) => {
         <h2 className="card-title">{t.title}</h2>
         <p>{t.description}</p>
         <div className="card-actions">
-          <button className="btn w-full border border-[#1D9E75] bg-transparent text-[#1D9E75]">View Details</button>
+          <Link href={`/all-tiles/${t.id}`} className="btn w-full border border-[#1D9E75] bg-transparent text-[#1D9E75]">
+            View Details
+          </Link>
         </div>
       </div>
     </div>

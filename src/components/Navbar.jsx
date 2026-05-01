@@ -40,8 +40,13 @@ const Navbar = () => {
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">{links}</ul>
       </div>
-      <div className="navbar-end">
-        <a className="btn bg-[#1D9E75] text-white">Login</a>
+      <div className="navbar-end gap-3.5">
+        <Link href={"/login"} className="btn bg-[#1D9E75] text-white">
+          Login
+        </Link>
+        <Link href={"/signup"} className="btn bg-[#1D9E75] text-white">
+          Sign Up
+        </Link>
       </div>
     </div>
   );
