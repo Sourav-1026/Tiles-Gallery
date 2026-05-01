@@ -1,9 +1,13 @@
-import Image from "next/image";
+import Banner from "@/components/Banner";
+import FeaturesTiles from "@/components/FeaturesTiles";
+import ScrollingLine from "@/components/ScrollingLine";
 
 export default function Home() {
   return (
-    <div>
-      <h1>Hello World</h1>
-    </div>
+    <>
+      <Banner />
+      <ScrollingLine />
+      <FeaturesTiles />
+    </>
   );
 }
