@@ -9,7 +9,7 @@ const getTiles = async () => {
 
 const FeaturesTiles = async () => {
   const tiles = await getTiles();
-  console.log(tiles);
+  // console.log(tiles);
 
   return (
     <div className="container mx-auto my-10">
