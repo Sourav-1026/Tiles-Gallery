@@ -1,27 +1,37 @@
-# 📍 TILES GALLERY – Tiles Collection Website
+# 🏠 TILES GALLERY – Tiles Collection Website
 
 ## 📄 Description
 
-- A smart and interactive friend tracking web app where users can view their friends, explore detailed profiles, and simulate real-life communication interactions. Users can call, text, or video chat with friends, and every activity is recorded in a timeline with date and time. The app also provides insights through visual stats to better understand interaction patterns.
+- **Tiles Gallery** is a modern and user-friendly web application where users can explore a wide variety of stylish and premium tile collections. The homepage highlights featured tiles for quick discovery, while the All Tiles page provides access to the complete collection. Users can also view detailed information about each tile through a dedicated details page. Additionally, authenticated users get access to a personalized **My Profile** page.
 
 ---
 
 ## ⚙️ Technologies Used
 
-- React.js
-- React Router
-- Tailwind CSS, DaisyUI
+- Next.js
+- BetterAuth Authenticaton
+- Tailwind CSS, DaisyUI, HeroUI
 - JavaScript (ES6+)
 - React-Toastify (NPM Package)
-- JSON (for product data)
+- React Icons
+- Gravity UI
+- JSON (for tiles data)
 
 ---
 
 ## ✨ 3 Features About My Project
 
-- 👥 Friend Profiles – Browse all friends in a clean card layout and view detailed information by clicking on each profile.
-- 📞 Activity Tracking – Call, text, or video interactions trigger real-time toast notifications and get saved into a timeline with date & time.
-- 📊 Stats Visualization – Interactive pie chart showing total calls, texts, and video interactions for better insights.
+### 🏡 Featured Tiles Showcase
+
+The homepage displays selected featured tiles so users can quickly discover popular and premium tile designs.
+
+### 🧱 Complete Tiles Collection
+
+Users can browse all available tiles on the **All Tiles** page with organized tile cards for easy navigation.
+
+### 👤 Secure User Profile Access
+
+The **My Profile** page is only visible to logged-in users, ensuring personalized and protected user access.
 
 ---
 
