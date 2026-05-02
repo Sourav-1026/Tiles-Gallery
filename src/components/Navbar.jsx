@@ -8,6 +8,7 @@ import { authClient } from "@/lib/auth-client";
 import { toast } from "react-toastify";
 import { LuLogOut } from "react-icons/lu";
 import { MdOutlineLogin } from "react-icons/md";
+import NavLink from "./NavLink";
 
 const Navbar = () => {
   const userData = authClient.useSession();
@@ -24,14 +25,14 @@ const Navbar = () => {
   const links = (
     <>
       <li>
-        <Link href={"/"}>Home</Link>
+        <NavLink href={"/"}>Home</NavLink>
       </li>
       <li>
-        <Link href={"/all-tiles"}>All Tiles</Link>
+        <NavLink href={"/all-tiles"}>All Tiles</NavLink>
       </li>
       {user && (
         <li>
-          <Link href={"/my-profile"}>My Profile</Link>
+          <NavLink href={"/my-profile"}>My Profile</NavLink>
         </li>
       )}
     </>
