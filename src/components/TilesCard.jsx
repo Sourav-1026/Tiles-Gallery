@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import { FaArrowRight } from "react-icons/fa";
 
 const TilesCard = ({ t }) => {
   return (
@@ -13,7 +14,7 @@ const TilesCard = ({ t }) => {
         <p>{t.description}</p>
         <div className="card-actions">
           <Link href={`/all-tiles/${t.id}`} className="btn w-full border border-[#1D9E75] bg-transparent text-[#1D9E75]">
-            View Details
+            View Details <FaArrowRight />
           </Link>
         </div>
       </div>

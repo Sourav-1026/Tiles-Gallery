@@ -3,6 +3,8 @@ import { authClient } from "@/lib/auth-client";
 import { Check } from "@gravity-ui/icons";
 import { Button, Card, Description, FieldError, Form, Input, Label, TextField } from "@heroui/react";
 import Link from "next/link";
+import { FcGoogle } from "react-icons/fc";
+import { toast } from "react-toastify";
 
 export default function LoginPage() {
   const onSubmit = async (e) => {
@@ -18,6 +20,14 @@ export default function LoginPage() {
       password,
       callbackURL: "/",
     });
+
+    if (data) {
+      toast.success("Successfully Login");
+    }
+
+    if (error) {
+      toast.error(error.message || "Something went wrong");
+    }
 
     console.log({ data, error });
   };
@@ -88,6 +98,7 @@ export default function LoginPage() {
 
       <p className="text-center">Or</p>
       <Button onClick={handleGoogleSignIN} variant="outline" className={"w-full bg-white"}>
+        <FcGoogle />
         SignIn with Google
       </Button>
     </Card>

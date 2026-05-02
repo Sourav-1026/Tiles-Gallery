@@ -14,7 +14,7 @@ const MyProfilePage = () => {
 
   return (
     <div>
-      <Card className="max-w-96 mx-auto flex flex-col items-center border border-gray-300 shadow-md my-30">
+      <Card className="max-w-96 mx-auto flex flex-col items-center border border-gray-300 shadow-md my-38">
         <Avatar className="h-20 w-20">
           <Avatar.Image alt={user?.name} src={user?.image} referrerPolicy="no-referrer" />
           <AvatarFallback>{user?.name.charAt(0)}</AvatarFallback>

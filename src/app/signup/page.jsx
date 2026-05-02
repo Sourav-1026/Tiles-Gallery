@@ -4,6 +4,7 @@ import { Check, Target } from "@gravity-ui/icons";
 import { Button, Card, Description, FieldError, Form, Input, Label, TextField } from "@heroui/react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import { toast } from "react-toastify";
 
 export default function SignUpPage() {
   const router = useRouter();
@@ -29,6 +30,14 @@ export default function SignUpPage() {
 
     if (!error) {
       router.push("/login");
+    }
+
+    if (data) {
+      toast.success("Successfully Registered");
+    }
+
+    if (error) {
+      toast.error(error.message || "Something went wrong");
     }
   };
 

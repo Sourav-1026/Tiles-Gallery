@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import TilesCard from "./TilesCard";
+import TilesCard from "../TilesCard";
 
 const getTiles = async () => {
   const res = await fetch("https://tiles-gallery-iota.vercel.app/data.json");

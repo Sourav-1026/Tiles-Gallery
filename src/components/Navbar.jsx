@@ -5,6 +5,9 @@ import React from "react";
 import logo from "@/assets/logo.png";
 import Image from "next/image";
 import { authClient } from "@/lib/auth-client";
+import { toast } from "react-toastify";
+import { LuLogOut } from "react-icons/lu";
+import { MdOutlineLogin } from "react-icons/md";
 
 const Navbar = () => {
   const userData = authClient.useSession();
@@ -15,6 +18,7 @@ const Navbar = () => {
 
   const handleLogout = async () => {
     await authClient.signOut();
+    toast.warning("Successfully Logout");
   };
 
   const links = (
@@ -59,6 +63,7 @@ const Navbar = () => {
         {!user && (
           <>
             <Link href="/login" className="btn bg-[#1D9E75] text-white">
+              <MdOutlineLogin className="text-lg" />
               Login
             </Link>
           </>
@@ -67,6 +72,7 @@ const Navbar = () => {
         {user && (
           <button onClick={handleLogout} className="btn btn-error text-white">
             Logout
+            <LuLogOut className="text-xl" />
           </button>
         )}
       </div>
