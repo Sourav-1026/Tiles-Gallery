@@ -10,11 +10,13 @@ const MyProfilePage = () => {
   const user = userData.data?.user;
   console.log(user);
 
+  if (!user) return null;
+
   return (
     <div>
       <Card className="max-w-96 mx-auto flex flex-col items-center border border-gray-300 shadow-md my-10">
         <Avatar className="h-20 w-20">
-          <Avatar.Image alt={user.name} src={user?.image} referrerPolicy="no-referrer" />
+          <Avatar.Image alt={user?.name} src={user?.image} referrerPolicy="no-referrer" />
           <AvatarFallback>{user?.name.charAt(0)}</AvatarFallback>
         </Avatar>
 
