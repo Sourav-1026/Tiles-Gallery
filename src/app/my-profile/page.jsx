@@ -1,5 +1,5 @@
 "use client";
-
+export const dynamic = "force-dynamic";
 import { UpdateProfileModal } from "@/components/UpdateProfileModal";
 import { authClient } from "@/lib/auth-client";
 import { Avatar, AvatarFallback, Card } from "@heroui/react";
