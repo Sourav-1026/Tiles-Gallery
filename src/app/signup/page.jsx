@@ -4,6 +4,7 @@ import { Check, Target } from "@gravity-ui/icons";
 import { Button, Card, Description, FieldError, Form, Input, Label, TextField } from "@heroui/react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import { FcGoogle } from "react-icons/fc";
 import { toast } from "react-toastify";
 
 export default function SignUpPage() {
@@ -39,6 +40,12 @@ export default function SignUpPage() {
     if (error) {
       toast.error(error.message || "Something went wrong");
     }
+  };
+
+  const handleGoogleSignIN = async () => {
+    await authClient.signIn.social({
+      provider: "google",
+    });
   };
 
   return (
@@ -110,6 +117,11 @@ export default function SignUpPage() {
           </Link>
         </div>
       </Form>
+      <p className="text-center">Or</p>
+      <Button onClick={handleGoogleSignIN} variant="outline" className={"w-full bg-white"}>
+        <FcGoogle />
+        Login with Google
+      </Button>
     </Card>
   );
 }

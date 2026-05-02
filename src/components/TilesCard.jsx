@@ -7,7 +7,7 @@ const TilesCard = ({ t }) => {
   return (
     <div key={t.id} className="card bg-base-100 shadow-sm  border border-gray-300">
       <div className="relative w-full aspect-square">
-        <Image src={t.image} alt={t.title} fill className="object-cover rounded-xl p-3" />
+        <Image src={t.image} alt={t.title} fill unoptimized className="object-cover rounded-xl p-3" />
       </div>
       <div className="card-body">
         <h2 className="card-title">{t.title}</h2>

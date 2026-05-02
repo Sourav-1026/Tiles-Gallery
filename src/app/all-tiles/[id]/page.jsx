@@ -15,7 +15,7 @@ const TilesDetailsPage = async ({ params }) => {
       <div className="flex flex-col md:flex-row gap-8 items-start shadow-md rounded-md border border-gray-300">
         {/* Left Side Image */}
         <div className="relative w-full md:w-1/2 aspect-square p-5">
-          <Image src={expectedTiles.image} alt={expectedTiles.title} width={400} height={400} className="object-cover w-full h-full rounded-lg" />
+          <Image src={expectedTiles.image} alt={expectedTiles.title} width={400} height={400} unoptimized className="object-cover w-full h-full rounded-lg" />
         </div>
 
         {/* Right Side Content */}

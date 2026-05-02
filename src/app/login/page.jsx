@@ -99,7 +99,7 @@ export default function LoginPage() {
       <p className="text-center">Or</p>
       <Button onClick={handleGoogleSignIN} variant="outline" className={"w-full bg-white"}>
         <FcGoogle />
-        SignIn with Google
+        Login with Google
       </Button>
     </Card>
   );
