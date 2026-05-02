@@ -17,7 +17,7 @@ const SearchBar = () => {
   };
 
   return (
-    <form onSubmit={handleSearch} className="flex gap-4 mt-4">
+    <form onSubmit={handleSearch} className="px-5 md:px-0 flex gap-4 mt-4">
       <label className="input w-full">
         <svg className="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
           <g strokeLinejoin="round" strokeLinecap="round" strokeWidth="2.5" fill="none" stroke="currentColor">
