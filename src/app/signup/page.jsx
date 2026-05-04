@@ -49,19 +49,19 @@ export default function SignUpPage() {
   };
 
   return (
-    <Card className="border mx-auto w-125 py-10 my-14 bg-[#1D9E75]">
+    <Card className="border mx-auto w-full max-w-125 px-4 py-10 my-10 md:my-14 bg-[#1D9E75]">
       <h1 className="text-center text-2xl font-bold text-white">Sign Up</h1>
 
-      <Form className="flex w-96 mx-auto flex-col gap-4" onSubmit={onSubmit}>
+      <Form className="flex w-full max-w-96 mx-auto flex-col gap-4 px-2" onSubmit={onSubmit}>
         <TextField isRequired name="name" type="text">
           <Label>Name</Label>
-          <Input placeholder="Enter your name" />
+          <Input placeholder="Enter your name" className="w-full" />
           <FieldError />
         </TextField>
 
         <TextField isRequired name="image" type="text">
           <Label>Image URL</Label>
-          <Input placeholder="Image URL" />
+          <Input placeholder="Image URL" className="w-full" />
           <FieldError />
         </TextField>
 
@@ -73,12 +73,11 @@ export default function SignUpPage() {
             if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(value)) {
               return "Please enter a valid email address";
             }
-
             return null;
           }}
         >
           <Label>Email</Label>
-          <Input placeholder="john@example.com" />
+          <Input placeholder="john@example.com" className="w-full" />
           <FieldError />
         </TextField>
 
@@ -88,37 +87,34 @@ export default function SignUpPage() {
           name="password"
           type="password"
           validate={(value) => {
-            if (value.length < 8) {
-              return "Password must be at least 8 characters";
-            }
-            if (!/[A-Z]/.test(value)) {
-              return "Password must contain at least one uppercase letter";
-            }
-            if (!/[0-9]/.test(value)) {
-              return "Password must contain at least one number";
-            }
-
+            if (value.length < 8) return "Password must be at least 8 characters";
+            if (!/[A-Z]/.test(value)) return "Password must contain at least one uppercase letter";
+            if (!/[0-9]/.test(value)) return "Password must contain at least one number";
             return null;
           }}
         >
           <Label>Password</Label>
-          <Input placeholder="Enter your password" />
-          <Description className="text-black">Must be at least 8 characters with 1 uppercase and 1 number</Description>
+          <Input placeholder="Enter your password" className="w-full" />
+          <Description className="text-black text-sm">Must be at least 8 characters with 1 uppercase and 1 number</Description>
           <FieldError />
         </TextField>
 
-        <div className="flex gap-2">
-          <Button type="submit">
+        <div className="flex flex-col sm:flex-row gap-2">
+          <Button type="submit" className="w-full sm:w-auto">
             <Check />
             Signup
           </Button>
-          <Link href={"/login"}>
-            <Button variant="secondary">Login</Button>
+          <Link href={"/login"} className="w-full sm:w-auto">
+            <Button variant="secondary" className="w-full">
+              Login
+            </Button>
           </Link>
         </div>
       </Form>
-      <p className="text-center">Or</p>
-      <Button onClick={handleGoogleSignIN} variant="outline" className={"w-full bg-white"}>
+
+      <p className="text-center text-white my-2">Or</p>
+
+      <Button onClick={handleGoogleSignIN} variant="outline" className="w-full max-w-96 mx-auto block bg-white px-4">
         <FcGoogle />
         Login with Google
       </Button>
