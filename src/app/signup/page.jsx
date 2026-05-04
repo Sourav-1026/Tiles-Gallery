@@ -114,10 +114,12 @@ export default function SignUpPage() {
 
       <p className="text-center text-white my-2">Or</p>
 
-      <Button onClick={handleGoogleSignIN} variant="outline" className="w-full max-w-96 mx-auto block bg-white px-4">
-        <FcGoogle />
-        Login with Google
-      </Button>
+      <div className="w-full max-w-96 mx-auto px-2">
+        <Button onClick={handleGoogleSignIN} variant="outline" className="w-full bg-white flex items-center justify-center gap-2">
+          <FcGoogle />
+          Login with Google
+        </Button>
+      </div>
     </Card>
   );
 }
