@@ -2,15 +2,18 @@
 export const dynamic = "force-dynamic";
 import { UpdateProfileModal } from "@/components/UpdateProfileModal";
 import { authClient } from "@/lib/auth-client";
-import { Avatar, AvatarFallback, Card } from "@heroui/react";
+import { Avatar, AvatarFallback, Button, Card } from "@heroui/react";
+import Link from "next/link";
 
 const MyProfilePage = () => {
   const userData = authClient.useSession();
   // console.log(userData);
   const user = userData.data?.user;
-  console.log(user);
+  console.log(user, "userData");
 
   if (!user) return null;
+  const { id } = user;
+  console.log(id);
 
   return (
     <div>
@@ -22,7 +25,9 @@ const MyProfilePage = () => {
 
         <h2 className="text-xl font-bold">{user?.name}</h2>
         <p className="text-muted">{user?.email}</p>
-        <UpdateProfileModal />
+        <Link href={`update-profile/${id}`}>
+          <Button>Update Profile</Button>
+        </Link>
       </Card>
     </div>
   );

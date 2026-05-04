@@ -3,8 +3,16 @@ import React from "react";
 import TilesCard from "../TilesCard";
 
 const getTiles = async () => {
-  const res = await fetch("https://tiles-gallery-iota.vercel.app/data.json");
-  return await res.json();
+  try {
+    const res = await fetch("https://tiles-gallery-iota.vercel.app/data.json", {
+      next: { revalidate: 3600 },
+    });
+    if (!res.ok) throw new Error("Failed to fetch");
+    return await res.json();
+  } catch (error) {
+    console.error("Failed to fetch tiles:", error);
+    return [];
+  }
 };
 
 const FeaturesTiles = async () => {

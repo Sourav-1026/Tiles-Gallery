@@ -53,7 +53,7 @@ const Navbar = () => {
           </ul>
         </div>
 
-        <Link href={"/"} className="btn btn-ghost ">
+        <Link href={"/"} className="">
           <Image src={logo} alt="" width={150} height={150} />
         </Link>
       </div>
